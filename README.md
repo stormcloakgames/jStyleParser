@@ -106,6 +106,31 @@ for (int index = 0; index < bgcnt; index++>) {
 
 See the details in the [documentation](http://cssbox.sourceforge.net/jstyleparser/manual.php#dom).
 
+Gradle and Jitpack support
+--------------------------
+
+This project now supports Gradle and Jitpack. After making a change, create a new release using the x.x.x format
+(See: https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
+
+If using in conjunction with CSSBox, you will then also need to update CSSBox's build.gradle.kts file and increment the version of jStyleParser
+with the new version number.
+
+ANTLR4 File generation
+--------------------------
+
+jStyleParser uses pre-generated ANTLR4 files. If any changes are made to any .g4 files, these files will need to be re-generated.
+
+To do so, use ANTRL4 version 4.13.2 for compatibility. Inside of any folder containing CSSLexer.g4 and CSSParser.g4 (these files can be found in src/main/antlr4/cz/vutbr/web/csskit/antlr4/)
+and the antlr-4.13.2-complete.jar file, use the following commands in this order:
+```
+Java -jar antlr-4.13.2-complete.jar CSSLexer.g4
+Java -jar antlr-4.13.2-complete.jar CSSParser.g4 -visitor
+```
+This should generate 8 files. Place these files in src/main/java/cz/vutbr/web/csskit/antlr4/
+At the top of each of the generated .java files, write the following package information if not already present:
+```
+package cz.vutbr.web.csskit.antlr4;
+```
 
 License
 -------
