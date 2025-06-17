@@ -3,6 +3,7 @@ jStyleParser
 
 [![Build with Maven](https://github.com/radkovo/jStyleParser/actions/workflows/maven.yml/badge.svg)](https://github.com/radkovo/jStyleParser/actions/workflows/maven.yml)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.sf.cssbox/jstyleparser/badge.png)](https://maven-badges.herokuapp.com/maven-central/net.sf.cssbox/jstyleparser)
+[![](https://jitpack.io/v/stormcloakgames/jStyleParser.svg)](https://jitpack.io/#stormcloakgames/jStyleParser)
 
 
 jStyleParser is a Java library for parsing CSS style sheets and assigning styles to the HTML or XML document elements according to the CSS 3 specifications.
@@ -21,6 +22,25 @@ With Maven, use the following dependency:
     <version>4.0.1</version>
 </dependency>
 ```
+
+With Gradle:
+
+```kotlin
+// add to build.gradle.kts
+repositories {
+    // ...
+    maven { url = uri("https://jitpack.io") }
+}
+
+dependencies {
+    implementation("com.github.stormcloakgames:jStyleParser:1.0.0") // or 'main-SNAPSHOT' for the latest build
+}
+```
+
+You can then refresh your Gradle dependencies to pick up the library.
+
+(If you're using `main-SNAPSHOT`, use `gradlew --refresh-dependencies` to force Gradle to pull the latest copy of all your dependencies.)
+
 
 Parsing CSS
 -----------
