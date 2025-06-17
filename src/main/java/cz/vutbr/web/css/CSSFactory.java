@@ -7,6 +7,7 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import java.util.Locale;
 
 import org.fit.net.DataURLHandler;
 import org.slf4j.Logger;
@@ -856,7 +857,7 @@ public final class CSSFactory {
 
 		private boolean isLinkedStyleSheet(Element e, MediaSpec media) {
 			return e.getNodeName().equalsIgnoreCase("link")
-			        && (matcher.getAttribute(e, "rel").toLowerCase().contains("stylesheet"))
+			        && (matcher.getAttribute(e, "rel").toLowerCase(Locale.ROOT).contains("stylesheet"))
 					&& (matcher.getAttribute(e, "type").isEmpty() || "text/css".equalsIgnoreCase(matcher.getAttribute(e, "type")))
 					&& isAllowedMedia(e, media);
 		}

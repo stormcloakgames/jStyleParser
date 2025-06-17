@@ -5,6 +5,7 @@ package cz.vutbr.web.domassign.decode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
@@ -76,7 +77,7 @@ public class Decoder
             Set<T> intersection, TermIdent term) {
 
         try {
-            String name = term.getValue().replace("-", "_").toUpperCase();
+            String name = term.getValue().replace("-", "_").toUpperCase(Locale.ROOT);
             T property = CSSProperty.Translator.valueOf(type, name);
             if (intersection != null && intersection.contains(property))
                 return property;

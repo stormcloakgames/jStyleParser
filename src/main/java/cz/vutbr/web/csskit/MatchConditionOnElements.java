@@ -7,6 +7,7 @@ package cz.vutbr.web.csskit;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
@@ -143,7 +144,7 @@ public class MatchConditionOnElements implements MatchCondition
             
             if (names != null)
             {
-                Set<PseudoClassType> pseudos = names.get(e.getTagName().toLowerCase());
+                Set<PseudoClassType> pseudos = names.get(e.getTagName().toLowerCase(Locale.ROOT));
                 if (pseudos != null)
                     return pseudos.contains(required);
             }

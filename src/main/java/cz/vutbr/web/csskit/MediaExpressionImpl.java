@@ -29,7 +29,7 @@ public class MediaExpressionImpl extends AbstractRule<Term<?>> implements MediaE
     @Override
     public void setFeature(String feature)
     {
-        this.feature = feature.trim().toLowerCase(Locale.ENGLISH);
+        this.feature = feature.trim().toLowerCase(Locale.ROOT);
     }
 
     @Override

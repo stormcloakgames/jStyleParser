@@ -8,6 +8,7 @@ import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
@@ -1494,7 +1495,7 @@ public class DeclarationTransformerImpl implements DeclarationTransformer {
 				// one of valid terms
 				if (t instanceof TermIdent
 						&& validTermIdents.contains(((TermIdent) t).getValue()
-								.toLowerCase()))
+								.toLowerCase(Locale.ROOT)))
 					list.add(t);
 				else if (t instanceof TermString)
 					list.add(t);

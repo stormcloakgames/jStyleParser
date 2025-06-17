@@ -1,6 +1,7 @@
 package test;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import org.w3c.dom.Document;
@@ -21,7 +22,7 @@ public class ElementMap {
 		TreeWalker w = new GenericTreeWalker(doc, NodeFilter.SHOW_ELEMENT);
 		Element current;
 		while ((current = (Element) w.nextNode()) != null) {
-			elementNames.put(current.getNodeName().toLowerCase(), current);
+			elementNames.put(current.getNodeName().toLowerCase(Locale.ROOT), current);
 			String id = current.getAttribute("id");
 			if(id!=null)
 				elementIDs.put(id, current);
@@ -33,7 +34,7 @@ public class ElementMap {
 	}
 	
 	public Element getLastElementByName(String name) {
-		return elementNames.get(name.toLowerCase());
+		return elementNames.get(name.toLowerCase(Locale.ROOT));
 	}
 
 }
