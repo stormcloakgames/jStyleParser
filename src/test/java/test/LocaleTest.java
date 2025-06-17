@@ -63,6 +63,8 @@ public class LocaleTest {
 				TermList.class, "background-position", 0).get(1));
 		Assert.assertEquals(tf.createColor(255, 255, 255), data.getValue(
 				TermColor.class, "color"));
+		
+		Locale.setDefault(Locale.ROOT);
 
 	}
 
