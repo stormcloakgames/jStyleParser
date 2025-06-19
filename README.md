@@ -143,14 +143,10 @@ jStyleParser uses pre-generated ANTLR4 files. If any changes are made to any .g4
 To do so, use ANTRL4 version 4.13.2 for compatibility. Inside of any folder containing CSSLexer.g4 and CSSParser.g4 (these files can be found in src/main/antlr4/cz/vutbr/web/csskit/antlr4/)
 and the antlr-4.13.2-complete.jar file, use the following commands in this order:
 ```
-Java -jar antlr-4.13.2-complete.jar CSSLexer.g4
-Java -jar antlr-4.13.2-complete.jar CSSParser.g4 -visitor
+Java -jar antlr-4.13.2-complete.jar CSSLexer.g4 -package cz.vutbr.web.csskit.antlr4
+Java -jar antlr-4.13.2-complete.jar CSSParser.g4 -package cz.vutbr.web.csskit.antlr4 -visitor
 ```
 This should generate 8 files. Place these files in src/main/java/cz/vutbr/web/csskit/antlr4/
-At the top of each of the generated .java files, write the following package information if not already present:
-```
-package cz.vutbr.web.csskit.antlr4;
-```
 
 License
 -------
