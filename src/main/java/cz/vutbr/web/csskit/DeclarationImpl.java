@@ -1,5 +1,7 @@
 package cz.vutbr.web.csskit;
 
+import java.util.Locale;
+
 import cz.vutbr.web.css.Declaration;
 import cz.vutbr.web.css.Term;
 
@@ -73,7 +75,7 @@ public class DeclarationImpl extends AbstractRule<Term<?>> implements Declaratio
 	 * @param property the property to set
 	 */
 	public void setProperty(String property) {
-		this.property = property.toLowerCase();
+		this.property = property.toLowerCase(Locale.ROOT);
 	}
 
 

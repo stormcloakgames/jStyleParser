@@ -5,6 +5,7 @@ package cz.vutbr.web.csskit.fn;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import cz.vutbr.web.css.CSSProperty.ListStyleType;
@@ -62,7 +63,7 @@ public class CounterImpl extends TermFunctionImpl implements TermFunction.Counte
             if (args.size() == 2) {
                 if (args.get(1) instanceof TermIdent) {
                     final String styleString = ((TermIdent) args.get(1)).getValue();
-                    style = allowedStyles.get(styleString.toLowerCase());
+                    style = allowedStyles.get(styleString.toLowerCase(Locale.ROOT));
                     if (style == null) {
                         setValid(false); //unknown style
                     }

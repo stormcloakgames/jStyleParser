@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
@@ -255,7 +256,7 @@ public class Analyzer {
 		// match element classes
 		for (String cname : matcher.elementClasses(e)) {
 			// holder contains rule with given class
-			List<OrderedRule> rules = holder.get(HolderItem.CLASS, cname.toLowerCase());
+			List<OrderedRule> rules = holder.get(HolderItem.CLASS, cname.toLowerCase(Locale.ROOT));
 			if (rules != null)
 				candidates.addAll(rules);
 		}
@@ -264,7 +265,7 @@ public class Analyzer {
 		// match IDs
 		String id = matcher.elementID(e);
 		if (id != null && id.length() != 0) {
-			List<OrderedRule> rules = holder.get(HolderItem.ID, id.toLowerCase());
+			List<OrderedRule> rules = holder.get(HolderItem.ID, id.toLowerCase(Locale.ROOT));
 			if (rules != null)
 				candidates.addAll(rules);
 		}
@@ -273,7 +274,7 @@ public class Analyzer {
 		// match elements
 		String name = matcher.elementName(e);
 		if (name != null) {
-			List<OrderedRule> rules = holder.get(HolderItem.ELEMENT, name.toLowerCase());
+			List<OrderedRule> rules = holder.get(HolderItem.ELEMENT, name.toLowerCase(Locale.ROOT));
 			if (rules != null)
 				candidates.addAll(rules);
 		}

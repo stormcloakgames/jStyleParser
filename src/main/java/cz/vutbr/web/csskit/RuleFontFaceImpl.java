@@ -7,6 +7,7 @@ package cz.vutbr.web.csskit;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import cz.vutbr.web.css.CSSProperty.FontStyle;
 import cz.vutbr.web.css.CSSProperty.FontWeight;
@@ -130,7 +131,7 @@ public class RuleFontFaceImpl extends AbstractRuleBlock<Declaration> implements 
 		}
 		
 		try {
-			return FontStyle.valueOf(strValue.toUpperCase());
+			return FontStyle.valueOf(strValue.toUpperCase(Locale.ROOT));
 		} catch (IllegalArgumentException e){
 			return null;
 		}
@@ -145,7 +146,7 @@ public class RuleFontFaceImpl extends AbstractRuleBlock<Declaration> implements 
 		}
 		
 		try {
-			return FontWeight.valueOf(strValue.toUpperCase());
+			return FontWeight.valueOf(strValue.toUpperCase(Locale.ROOT));
 		} catch (IllegalArgumentException e){
 			return null;
 		}

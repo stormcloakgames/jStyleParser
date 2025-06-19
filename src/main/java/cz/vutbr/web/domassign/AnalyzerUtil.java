@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -75,7 +76,7 @@ public final class AnalyzerUtil {
         // match element classes
         for (final String cname : CSSFactory.getElementMatcher().elementClasses(e)) {
             // holder contains rule with given class
-            final List<OrderedRule> classRules = holder.get(HolderItem.CLASS, cname.toLowerCase());
+            final List<OrderedRule> classRules = holder.get(HolderItem.CLASS, cname.toLowerCase(Locale.ROOT));
             if (classRules != null)
                 candidates.addAll(classRules);
         }
@@ -84,7 +85,7 @@ public final class AnalyzerUtil {
         // match IDs
         final String id = CSSFactory.getElementMatcher().elementID(e);
         if (id != null && id.length() != 0) {
-            final List<OrderedRule> idRules = holder.get(HolderItem.ID, id.toLowerCase());
+            final List<OrderedRule> idRules = holder.get(HolderItem.ID, id.toLowerCase(Locale.ROOT));
             if (idRules != null)
                 candidates.addAll(idRules);
         }
@@ -93,7 +94,7 @@ public final class AnalyzerUtil {
         // match elements
         final String name = CSSFactory.getElementMatcher().elementName(e);
         if (name != null) {
-            final List<OrderedRule> nameRules = holder.get(HolderItem.ELEMENT, name.toLowerCase());
+            final List<OrderedRule> nameRules = holder.get(HolderItem.ELEMENT, name.toLowerCase(Locale.ROOT));
             if (nameRules != null)
                 candidates.addAll(nameRules);
         }
@@ -404,7 +405,7 @@ public final class AnalyzerUtil {
 				// element
 				else
 					hs.add(new HolderSelector(HolderItem.ELEMENT, element
-							.toLowerCase()));
+							.toLowerCase(Locale.ROOT)));
 			}
 
 			// is class name
@@ -416,7 +417,7 @@ public final class AnalyzerUtil {
 			// is id
 			final String id = last.getIDName();
 			if (id != null)
-				hs.add(new HolderSelector(HolderItem.ID, id.toLowerCase()));
+				hs.add(new HolderSelector(HolderItem.ID, id.toLowerCase(Locale.ROOT)));
 
 			// is in others
 			if (hs.size() == 0)

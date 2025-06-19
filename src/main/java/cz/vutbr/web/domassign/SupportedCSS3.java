@@ -3,6 +3,7 @@ package cz.vutbr.web.domassign;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
@@ -124,7 +125,7 @@ public class SupportedCSS3 implements SupportedCSS {
 		if (media == null)
 			return false;
 
-		return supportedMedia.contains(media.toLowerCase());
+		return supportedMedia.contains(media.toLowerCase(Locale.ROOT));
 	}
 
 	public final boolean isSupportedCSSProperty(String property) {

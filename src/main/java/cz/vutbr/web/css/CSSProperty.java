@@ -2,6 +2,7 @@ package cz.vutbr.web.css;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -5080,7 +5081,7 @@ public interface CSSProperty {
          */
         public static GenericCSSPropertyProxy valueOf(final String value)
         {
-            return new GenericCSSPropertyProxy(value == null ? "" : value.toLowerCase());
+            return new GenericCSSPropertyProxy(value == null ? "" : value.toLowerCase(Locale.ROOT));
         }
 	}	
 	

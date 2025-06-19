@@ -1,6 +1,7 @@
 package cz.vutbr.web.csskit;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 import org.unbescape.css.CssEscape;
@@ -699,7 +700,7 @@ public class SelectorImpl extends AbstractRule<Selector.SelectorPart> implements
             if (index == null) {
                 return null;
             }
-		    String s = index.toLowerCase().trim();
+		    String s = index.toLowerCase(Locale.ROOT).trim();
 		    if (s.equals("odd")){
                 return new int[] {2, 1};
 		    }

@@ -2,6 +2,7 @@ package cz.vutbr.web.csskit;
 
 import java.net.URL;
 import java.util.List;
+import java.util.Locale;
 
 import cz.vutbr.web.css.CSSFactory;
 import cz.vutbr.web.css.CSSProperty;
@@ -253,7 +254,7 @@ public class TermFactoryImpl implements TermFactory {
         //split the number and the unit
         if (valend >= 0 && valend < value.length() - 1) {
             final String upart = value.substring(valend + 1);
-            final TermNumeric.Unit unit = TermNumeric.Unit.findByValue(upart.toLowerCase());
+            final TermNumeric.Unit unit = TermNumeric.Unit.findByValue(upart.toLowerCase(Locale.ROOT));
             if (unit != null) {
                 final String vpart = value.substring(0, valend + 1);
                 Float f;
@@ -388,7 +389,7 @@ public class TermFactoryImpl implements TermFactory {
             if (unit != null)
             {
     			// trim & lowercase
-    			value = value.trim().toLowerCase();
+    			value = value.trim().toLowerCase(Locale.ROOT);
     			// trim units from value
                 if (value.endsWith(unit))
                     value = value.substring(0, value.length() - unit.length());
@@ -410,7 +411,7 @@ public class TermFactoryImpl implements TermFactory {
 		    if (unit != null)
 		    {
         		// trim & lowercase
-        		value = value.trim().toLowerCase();
+        		value = value.trim().toLowerCase(Locale.ROOT);
         		// trim units from value
         		if (value.endsWith(unit))
         		    value = value.substring(0, value.length() - unit.length());

@@ -1,6 +1,7 @@
 package cz.vutbr.web.csskit;
 
 import java.util.List;
+import java.util.Locale;
 
 import cz.vutbr.web.css.CSSFactory;
 import cz.vutbr.web.css.Term;
@@ -113,7 +114,7 @@ public class TermColorImpl extends TermImpl<Color> implements TermColor {
     		throw new IllegalArgumentException("Invalid hash value (null) for color construction");
     	
     	// lowercase and remove hash character, if any
-    	hash = hash.toLowerCase().replaceAll("^#", "");
+    	hash = hash.toLowerCase(Locale.ROOT).replaceAll("^#", "");
     	
     	// color written in #ABC format
         if(hash.matches("^[0-9a-f]{3}$")) {
