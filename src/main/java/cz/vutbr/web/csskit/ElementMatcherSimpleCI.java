@@ -8,6 +8,7 @@ package cz.vutbr.web.csskit;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Locale;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -41,7 +42,7 @@ public class ElementMatcherSimpleCI implements ElementMatcher
         if (!classNames.isEmpty())
         {
             Collection<String> list = new ArrayList<String>();
-            for (String cname : classNames.toLowerCase().split(CLASS_DELIM)) 
+            for (String cname : classNames.toLowerCase(Locale.ROOT).split(CLASS_DELIM)) 
             {
                 cname = cname.trim();
                 if(cname.length() > 0)
@@ -55,10 +56,10 @@ public class ElementMatcherSimpleCI implements ElementMatcher
     
     public boolean matchesClass(final Element e, final String className)
     {
-        final String classNames = e.getAttribute(CLASS_ATTR).toLowerCase();
+        final String classNames = e.getAttribute(CLASS_ATTR).toLowerCase(Locale.ROOT);
         if (!classNames.isEmpty())
         {
-            final String search = className.toLowerCase();
+            final String search = className.toLowerCase(Locale.ROOT);
             final int len = className.length();
             int lastIndex = 0;
             

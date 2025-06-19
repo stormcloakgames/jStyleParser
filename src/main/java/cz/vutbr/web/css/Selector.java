@@ -1,5 +1,6 @@
 package cz.vutbr.web.css;
 
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import org.w3c.dom.Element;
@@ -94,7 +95,7 @@ public interface Selector extends Rule<Selector.SelectorPart> {
                     }
                 }
             }
-            return lookup.get(name.toLowerCase());
+            return lookup.get(name.toLowerCase(Locale.ROOT));
         }
     }
     
@@ -171,7 +172,7 @@ public interface Selector extends Rule<Selector.SelectorPart> {
                     }
                 }
             }
-            return lookup.get(name.toLowerCase());
+            return lookup.get(name.toLowerCase(Locale.ROOT));
         }
     }
     
@@ -216,7 +217,7 @@ public interface Selector extends Rule<Selector.SelectorPart> {
                     }
                 }
             }
-            return lookup.get(name.toLowerCase());
+            return lookup.get(name.toLowerCase(Locale.ROOT));
         }
     }
     

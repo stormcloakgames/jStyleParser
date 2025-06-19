@@ -18,6 +18,7 @@ import org.antlr.v4.runtime.tree.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Stack;
 
 
@@ -1042,7 +1043,7 @@ public class CSSParserVisitorImpl implements CSSParserVisitor<Object>, CSSParser
             return null;
         }
         Term<?> ret = null;
-        final String fname = extractTextUnescaped(ctx.FUNCTION().getText()).toLowerCase();
+        final String fname = extractTextUnescaped(ctx.FUNCTION().getText()).toLowerCase(Locale.ROOT);
         if (ctx.funct_args() != null)
         {
             List<Term<?>> t = visitFunct_args(ctx.funct_args());

@@ -1,6 +1,7 @@
 package cz.vutbr.web.csskit;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import cz.vutbr.web.css.TermColor;
@@ -176,7 +177,7 @@ public class ColorCard {
 	 * @return Color if found, <code>null</code> otherwise
 	 */
 	public static TermColor getTermColor(String name) {
-		return map.get(name.toLowerCase());
+		return map.get(name.toLowerCase(Locale.ROOT));
 	}
 	
 }

@@ -122,7 +122,7 @@ public class MediaSpec
     public MediaSpec(String type)
     {
         loadDefaults();
-        this.type = type.trim().toLowerCase(Locale.ENGLISH);
+        this.type = type.trim().toLowerCase(Locale.ROOT);
     }
 
     /**
@@ -638,7 +638,7 @@ public class MediaSpec
         {
             Term<?> term = e.get(0);
             if (term instanceof TermIdent)
-                return ((TermIdent) term).getValue().trim().toLowerCase(Locale.ENGLISH);
+                return ((TermIdent) term).getValue().trim().toLowerCase(Locale.ROOT);
             else
                 return null;
         }

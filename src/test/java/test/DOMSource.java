@@ -22,6 +22,7 @@ package test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Locale;
 
 import org.htmlunit.cyberneko.html.dom.HTMLDocumentImpl;
 import org.htmlunit.cyberneko.parsers.DOMParser;
@@ -54,7 +55,7 @@ public class DOMSource
     {
         if (type != null)
         {
-            String t = type.toLowerCase();
+            String t = type.toLowerCase(Locale.ROOT);
 
             //extract the charset if specified
             int strt = t.indexOf("charset=");
