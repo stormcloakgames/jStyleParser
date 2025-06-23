@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.stormcloakgames:jStyleParser:1.0.0") // or 'main-SNAPSHOT' for the latest build
+    implementation("com.github.stormcloakgames:jStyleParser:4.1.0") // or 'main-SNAPSHOT' for the latest build
 }
 ```
 
